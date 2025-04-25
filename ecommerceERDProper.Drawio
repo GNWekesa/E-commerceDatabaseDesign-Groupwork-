@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="N9iYEqbWiZYMgu_v2CvX" name="Page-1">
-        <mxGraphModel dx="1679" dy="1277" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+        <mxGraphModel dx="2258" dy="1288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1427,6 +1427,9 @@
                         <mxPoint x="639.9999999999998" y="1330.6799999999998" as="sourcePoint"/>
                         <mxPoint x="1610.05" y="800" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="398" value="ERD FOR ECOMMERCE DATABASE" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=29;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="-20" y="-200" width="620" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

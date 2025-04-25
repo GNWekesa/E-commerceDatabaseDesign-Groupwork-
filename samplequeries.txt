@@ -1,3 +1,4 @@
+i can use the below queries
 1. List All Products with Category, Brand, and Price
 SELECT 
     p.product_id,

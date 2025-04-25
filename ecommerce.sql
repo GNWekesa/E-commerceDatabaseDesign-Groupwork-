@@ -1,5 +1,6 @@
 -- CREATE DATABASE ecommerce;
 -- USE ecommerce;
+-- my work
 
 -- CREATE TABLE book (
 --     book_id INT AUTO_INCREMENT PRIMARY KEY,
