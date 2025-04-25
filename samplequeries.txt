@@ -1,0 +1,68 @@
+1. List All Products with Category, Brand, and Price
+SELECT 
+    p.product_id,
+    p.name AS product_name,
+    b.brand_name,
+    pc.category_name,
+    p.base_price
+FROM product p
+JOIN brand b ON p.brand_id = b.brand_id
+JOIN product_category pc ON p.category_id = pc.category_id;
+
+2. List Available SKUs with Variations and Stock
+SELECT 
+    pi.sku,
+    p.name AS product_name,
+    c.color_name,
+    so.size_label,
+    pi.price,
+    pi.stock_quantity
+FROM product_item pi
+JOIN product p ON pi.product_id = p.product_id
+LEFT JOIN product_variation pv ON pv.product_item_id = pi.product_item_id
+LEFT JOIN color c ON pv.color_id = c.color_id
+LEFT JOIN size_option so ON pv.size_option_id = so.size_option_id;
+
+3. List Product Attributes for Each SKU
+SELECT 
+    pi.sku,
+    pa.attribute_name,
+    pa.attribute_value,
+    ac.category_name AS attribute_category,
+    at.type_name AS attribute_type
+FROM product_attribute pa
+JOIN product_item pi ON pa.product_item_id = pi.product_item_id
+JOIN attribute_category ac ON pa.attribute_category_id = ac.attribute_category_id
+JOIN attribute_type at ON pa.attribute_type_id = at.attribute_type_id
+ORDER BY pi.sku;
+
+4. Get Primary Image URL for Each SKU
+SELECT 
+    pi.sku,
+    pimg.image_url
+FROM product_image pimg
+JOIN product_item pi ON pimg.product_item_id = pi.product_item_id
+WHERE pimg.is_primary = TRUE;
+
+5. Inventory Check: Low Stock Items (e.g., < 10 units)
+SELECT 
+    pi.sku,
+    p.name AS product_name,
+    pi.stock_quantity
+FROM product_item pi
+JOIN product p ON pi.product_id = p.product_id
+WHERE pi.stock_quantity < 10;
+
+6. Available Sizes by Size Category
+SELECT 
+    sc.name AS size_category,
+    so.size_label
+FROM size_option so
+JOIN size_category sc ON so.size_category_id = sc.size_category_id
+ORDER BY sc.name, so.size_label;
+
+7. All Unique Colors Available for Sale
+SELECT DISTINCT
+    c.color_name
+FROM product_variation pv
+JOIN color c ON pv.color_id = c.color_id;
